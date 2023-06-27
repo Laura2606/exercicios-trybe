@@ -7,7 +7,7 @@ const button = document.querySelector('#button');
 const seletor = document.querySelector('#option');
 const textoDeSaida = document.querySelector('#answer');
 
-const UUID_VERSION = 4;
+// const UUID_VERSION = 4;
 
 button.addEventListener('click', (event) => {
   // Vamos usar o preventDefault() para evitar que, ao
@@ -19,9 +19,9 @@ button.addEventListener('click', (event) => {
   // o campoDeTexto.value é um CPF.
   const campos = {
     cpf: validator.isTaxID(campoDeTexto.value, 'pt-BR'),
-    hexColor: validator.isHexColor(campoDeTexto.value),
+    data: validator.isDate(campoDeTexto.value),
     email: validator.isEmail(campoDeTexto.value),
-    uuid: validator.isUUID(campoDeTexto.value, UUID_VERSION),
+    numero: validator.isNumeric(campoDeTexto.value),
     url: validator.isURL(campoDeTexto.value),
   };
 
