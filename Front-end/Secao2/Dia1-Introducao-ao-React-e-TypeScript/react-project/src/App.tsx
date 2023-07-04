@@ -1,11 +1,13 @@
-import Header from './components/header';
+import Greeting from './components2/Greeting';
+import LuckyNumbers from './components2/LuckyNumbers';
+import './components/App.css';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <p>Hello wolrd</p>
-    </div>
+    <>
+      <Greeting />
+      <LuckyNumbers />
+    </>
   );
 }
 

@@ -1,12 +1,11 @@
-const user = {
-  name: 'Miguel',
-  lastName: 'Silva',
-};
+import User from './user';
 
 function Header() {
   return (
     <h1>
-      {`Olá,${user.name} ${user.lastName}`}
+      Olá,
+      {' '}
+      <User />
     </h1>
   );
 }
