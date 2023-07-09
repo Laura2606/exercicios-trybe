@@ -13,4 +13,4 @@ displayPasswordEl.addEventListener('click', (event) => {
   copy(event.target.innerHTML);
   alert('Senha copiada!');
 });
-
+//teste
