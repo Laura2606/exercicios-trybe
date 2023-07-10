@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import './App.css';
 // src/App.tsx
 
 function App() {
