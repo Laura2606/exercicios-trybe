@@ -1,5 +1,21 @@
-const express = require('express');
+// const express = require('express');
 
-const app = express();
+// const fs = require('fs').promises;
+// const path = require('path');
 
-module.exports = app;
+// const app = express();
+
+const moviesPath = path.resolve(__dirname, './movies.json');
+
+const readFile = async () => {
+  try {
+    const data = await fs.readFile(moviesPath);
+    return JSON.parse(data);
+  } catch (error) {
+    console.error(`Arquivo não pôde ser lido: ${error}`);
+  }
+};
+
+
+// module.exports = app;
+
