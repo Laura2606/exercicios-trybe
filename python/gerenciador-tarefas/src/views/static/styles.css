@@ -6,7 +6,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
 }
 
@@ -17,7 +17,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 18px;
     width: 300px;
-    height: 300px;
+    /* height: 400px; */
     margin: 100px;
 }
 
@@ -25,6 +25,7 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
+
 }
 
 /* .form-group {
@@ -56,12 +57,14 @@ h2 {
 }
 
 button:hover,
-button.complete:hover {
+button.complete:hover,
+button.delete:hover {
     background: #5e60ce;
 }
 
 button,
-button.complete {
+button.complete,
+button.delete {
     width: 100%;
     padding: 10px;
     background: #4ea8de;
@@ -71,6 +74,11 @@ button.complete {
     font-size: 16px;
     cursor: pointer;
 }
+
+/* button.complete,
+button.delete {
+    margin-bottom: 10px;
+} */
 
 ul {
     list-style: none;
@@ -86,18 +94,41 @@ li {
     align-items: center;
 }
 
+
 li:last-child {
     border-bottom: none;
 }
+
 
 .completed {
     text-decoration: line-through;
     color: #999;
     background-color: #f0f0f0;
     border-radius: 18px;
+    flex: 1;
 }
 
-.delete {
+.button-container {
+    display: flex;
+    gap: 10px;
+    /* Espaço entre os botões */
+    /* width: 100%; */
+}
+
+button.complete {
+    flex: 1;
+    /* Faz o botão ocupar a mesma largura */
+}
+
+button.delete {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    /* Faz o botão ocupar a mesma largura */
+}
+
+
+/* .delete {
     background: #d9534f;
     color: #fff;
     border: none;
@@ -108,13 +139,9 @@ li:last-child {
     line-height: 24px;
     text-align: center;
     cursor: pointer;
-}
+} */
 
-.delete:hover {
-    background: #c9302c;
-}
-
-.complete {
+/* .complete {
     background: #5cb85c;
     color: #fff;
     border: none;
@@ -122,4 +149,4 @@ li:last-child {
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
-}
+} */

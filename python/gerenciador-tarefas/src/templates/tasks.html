@@ -8,21 +8,6 @@
 
 <body>
     <!-- <h1>Gerenciador de Tarefas</h1> -->
-    <div class="container">
-        <h2>Tarefas:</h2>
-        <ul>
-            {% for task in tasks %}
-            <li {% if task.completed %}class="completed" {% endif %}>
-                {{ task.title }}
-                {% if not task.completed %}
-                <form method="GET" action="/complete/{{ task.id }}">
-                    <button type="submit" class="complete">Concluir</button>
-                </form>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
     <div class="container-form">
         <h2>Adicionar Tarefa:</h2>
         <div class="form-group">
@@ -32,6 +17,27 @@
             </form>
         </div>
     </div>
+    <div class="container">
+        <h2>Tarefas:</h2>
+        <ul>
+            {% for task in tasks %}
+            <li {% if task.completed %}class="completed" {% endif %}>
+                {{ task.title }}
+                <div class="button-container">
+                    {% if not task.completed %}
+                    <form method="GET" action="/complete/{{ task.id }}">
+                        <button type="submit" class="complete">Concluir</button>
+                    </form>
+                    {% endif %}
+                    <form method="POST" action="/delete/{{ task.id }}">
+                        <button type="submit" class="delete">Apagar</button>
+                    </form>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
 </body>
 
 </html>

@@ -35,3 +35,10 @@ def complete_task(task_id):
             task.completed = True
 
     return render_template("tasks.html", tasks=tasks)
+
+
+@bp.route("/delete/<int:task_id>", methods=["POST"])
+def delete_task(task_id):
+    global tasks
+    tasks = [task for task in tasks if task.id != task_id]
+    return render_template("tasks.html", tasks=tasks)
