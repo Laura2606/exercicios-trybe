@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #5390d9;
     color: #333;
     margin: 0;
     padding: 0;
@@ -10,31 +10,64 @@ body {
     height: 100vh;
 }
 
-.container {
-    background: #fff;
+.container,
+.container-form {
+    background: #5e60ce;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 18px;
     width: 300px;
+    height: 300px;
+    margin: 100px;
 }
 
-h1,
+.container-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.form-group input {
+    width: calc(100% - 20px);
+    /* Ocupa toda a largura do container com uma margem de 10px em cada lado */
+    margin-bottom: 30px;
+    margin-left: 8px;
+    /* Adicione margem inferior para separar o input do botão */
+    border-radius: 18px;
+    background-color: #f0f0f0;
+}
+
+.add-task {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    /* Ocupa toda a largura do container com uma margem de 10px em cada lado */
+}
+
+/* h1, */
 h2 {
     text-align: center;
-    color: #d4a373
+    color: #4ea8de
 }
 
-button:hover {
-    background: #4cae4c;
+button:hover,
+button.complete:hover {
+    background: #5e60ce;
 }
 
-button {
+button,
+button.complete {
     width: 100%;
     padding: 10px;
-    background: #5cb85c;
+    background: #4ea8de;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 18px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -45,6 +78,7 @@ ul {
 }
 
 li {
+    color: #f0f0f0;
     padding: 10px;
     border-bottom: 1px solid #ddd;
     display: flex;
@@ -60,6 +94,7 @@ li:last-child {
     text-decoration: line-through;
     color: #999;
     background-color: #f0f0f0;
+    border-radius: 18px;
 }
 
 .delete {

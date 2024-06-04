@@ -16,7 +16,13 @@ tasks = [
 def tasks_view():
     if request.method == "POST":
         title = request.form["title"]
-        new_task = Task(len(tasks) + 1, title)
+        # new_task = Task(len(tasks) + 1, title)
+        # tasks.append(new_task)
+        if tasks:
+            new_id = tasks[-1].id + 1
+        else:
+            new_id = 1
+        new_task = Task(new_id, title)
         tasks.append(new_task)
 
     return render_template("tasks.html", tasks=tasks)
