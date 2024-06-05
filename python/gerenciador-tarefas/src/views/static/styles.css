@@ -1,6 +1,7 @@
 body {
     font-family: 'Gloria Hallelujah', 'Comic Sans MS', cursive;
     background-color: #5390d9;
+    /* background-image: url('./image/purple-flowers.jpg'); */
     color: #333;
     margin: 0;
     padding: 0;
@@ -16,6 +17,8 @@ body {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 18px;
+    /* border-style: dotted; */
+    border-color: #ffc300;
     width: 300px;
     /* height: 400px; */
     margin: 100px;
@@ -41,7 +44,7 @@ body {
     margin-left: 8px;
     /* Adicione margem inferior para separar o input do botão */
     border-radius: 18px;
-    background-color: #4895ef;
+    background-color: #5390d9;
     font-family: 'Gloria Hallelujah', 'Comic Sans MS', cursive;
     color: #fff;
 
@@ -65,14 +68,15 @@ h2 {
 
 button:hover,
 button.complete:hover,
-button.delete:hover {
+button.delete:hover,
+button.undo:hover {
     background: #5e60ce;
 }
 
 button,
 button.complete,
 button.delete,
-button.undo:hover {
+button.undo {
     width: 100%;
     padding: 10px;
     background: #4ea8de;
@@ -114,6 +118,7 @@ li:last-child {
     background-color: #5390d9;
     border-radius: 18px;
     flex: 1;
+    margin-bottom: 5px;
 }
 
 .button-container {
