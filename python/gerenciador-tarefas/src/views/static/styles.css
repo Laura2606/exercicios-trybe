@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Gloria Hallelujah', 'Comic Sans MS', cursive;
     background-color: #5390d9;
     color: #333;
     margin: 0;
@@ -41,13 +41,20 @@ body {
     margin-left: 8px;
     /* Adicione margem inferior para separar o input do botão */
     border-radius: 18px;
-    background-color: #f0f0f0;
+    background-color: #4895ef;
+    font-family: 'Gloria Hallelujah', 'Comic Sans MS', cursive;
+    color: #fff;
+
 }
 
 .add-task {
     width: calc(100% - 20px);
     margin-left: 10px;
     /* Ocupa toda a largura do container com uma margem de 10px em cada lado */
+}
+
+::placeholder {
+    color: #fff;
 }
 
 /* h1, */
@@ -64,7 +71,8 @@ button.delete:hover {
 
 button,
 button.complete,
-button.delete {
+button.delete,
+button.undo:hover {
     width: 100%;
     padding: 10px;
     background: #4ea8de;
@@ -88,7 +96,7 @@ ul {
 li {
     color: #f0f0f0;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 4px solid #ddd; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,8 +110,8 @@ li:last-child {
 
 .completed {
     text-decoration: line-through;
-    color: #999;
-    background-color: #f0f0f0;
+    color: #f0f0f0;
+    background-color: #5390d9;
     border-radius: 18px;
     flex: 1;
 }

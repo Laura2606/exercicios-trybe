@@ -4,6 +4,7 @@
 <head>
     <title>Gerenciador de Tarefas</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap">
 </head>
 
 <body>
@@ -24,7 +25,11 @@
             <li {% if task.completed %}class="completed" {% endif %}>
                 {{ task.title }}
                 <div class="button-container">
-                    {% if not task.completed %}
+                    {% if task.completed %}
+                    <form method="POST" action="/undo/{{ task.id }}">
+                        <button type="submit" class="undo">Desfazer</button>
+                    </form>
+                    {% else %}
                     <form method="GET" action="/complete/{{ task.id }}">
                         <button type="submit" class="complete">Concluir</button>
                     </form>

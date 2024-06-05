@@ -1,4 +1,4 @@
-from flask import Blueprint, request, render_template
+from flask import Blueprint, request, render_template, redirect, url_for
 from models.Task import Task
 
 bp = Blueprint("tasks", __name__, template_folder='../templates',
@@ -42,3 +42,11 @@ def delete_task(task_id):
     global tasks
     tasks = [task for task in tasks if task.id != task_id]
     return render_template("tasks.html", tasks=tasks)
+
+
+@bp.route("/undo/<int:task_id>", methods=["POST"])
+def undo_task(task_id):
+    for task in tasks:
+        if task.id == task_id:
+            task.completed = False
+    return redirect(url_for('tasks.tasks_view'))
