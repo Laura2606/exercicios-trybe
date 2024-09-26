@@ -43,13 +43,13 @@ const [inputValue, setInputValue] = useState('');
   return (
     <>
       <h1>Caixa de ferramentas de uma Pessoa Desenvolvedora</h1>
-      <h2>{ toolList[index] }</h2> 
+      <h2>{toolList[index]}</h2>
       <button onClick={handlePreviousClick}>Anterior</button>
       <button onClick={handleNextClick}>Próximo</button>
       <section>
         <h3>Adicione novas ferramentas</h3>
-        <input onChange={({ target }) => setInputValue(target.value)}/>
-        <button onClick={ handleAddClick }>Adicionar</button>   
+        <input onChange={({ target }) => setInputValue(target.value)} />
+        <button onClick={handleAddClick}>Adicionar</button>
       </section>
       <section>
         <h3>Lista de itens do carrossel:</h3>
